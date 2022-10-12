@@ -141,9 +141,11 @@ public class GUI implements ActionListener {
                 return;
             }
 
+            queen.Init();
+
             try {
                 Scanner scan = new Scanner(fileIn);
-                fileOut = new File(outdir.substring(0, outdir.length()-1) + "/" + fileIn.getName().substring(0, fileIn.getName().lastIndexOf('.')) + ".asm");
+                fileOut = new File(outdir.substring(0, outdir.length() - 1) + "/" + fileIn.getName().substring(0, fileIn.getName().lastIndexOf('.')) + ".asm");
                 fileOut.createNewFile();
 
                 FileWriter writer = new FileWriter(fileOut);
@@ -173,11 +175,18 @@ public class GUI implements ActionListener {
                     lineNum++;
                 }
 
-                consoleBox.setText("");
-                consoleBox.append("Translation complete!\n");
-                consoleBox.append("Your code has been written to: '" + fileOut.getName() + "'");
-                writer.close();
+                if(queen.checkEnd())
+                {
+                    consoleBox.setText("");
+                    consoleBox.append("Translation complete!\n");
+                    consoleBox.append("Your code has been written to: '" + fileOut.getName() + "'");
+                    writer.close();
+                    return;
+                }
 
+                consoleBox.setText("error: missing end keyword");
+                writer.write("--error--");
+                writer.close();
             }
             catch(Exception e)
             {
