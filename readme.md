@@ -85,6 +85,7 @@ Bitwose XOR (reg **a**, reg **b**, reg/imm **c**)
 `a = b ^ c`  
 `a = b xor c`  
 Boolean (reg **a**, bool **exp**)  
+`a = exp`  
 The following are valid for **exp**: (reg **b**, reg/imm **c**)
 - `b == c`
 - `b != c`
