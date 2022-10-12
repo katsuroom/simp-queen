@@ -1,0 +1,17 @@
+// isPrime(int): 1 if true, 0 if false
+
+$a0 = 15
+jal isPrime()
+exit
+
+func isPrime():
+	$t0 = 2
+	while $t0 < $a0:
+		$t1 = $a0 % $t0
+		if $t1 == $0:
+			return 0
+		end
+		$t0 = $t0 + 1
+	end
+	return 1
+end

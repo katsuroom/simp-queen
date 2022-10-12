@@ -1,0 +1,33 @@
+// least common multiple (56, 48) = 336
+$a0 = 56
+$a1 = 48
+jal lcm()
+exit
+
+func gcd():
+	$t0 = $a0 % $a1
+	$a0 = $a1
+	$a1 = $t0
+
+	if $t0 != $0:
+		j gcd()
+	end
+
+	return $a0
+end
+
+func lcm():
+	stack.push($a0)
+	stack.push($a1)
+	jal gcd()
+	
+	$t0 = $v0
+	stack.pop($a1)
+	stack.pop($a0)
+	
+	$t1 = $a0 / $t0
+	$t2 = $a1 / $t0
+	$v0 = $t0 * $t1
+	$v0 = $v0 * $t2
+	return
+end

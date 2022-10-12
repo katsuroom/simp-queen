@@ -1,0 +1,15 @@
+// exp(a, b) = a^b
+
+$a0 = 2
+$a1 = 6
+jal exp()
+exit
+
+func exp():
+	$t0 = 1
+	while $a1 > $0:
+		$t0 = $t0 * $a0
+		$a1 = $a1 - 1
+	end
+	return $t0
+end
