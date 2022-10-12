@@ -16,11 +16,11 @@ public class Queen {
     //Pattern stringRegex = Pattern.compile("'(.+?)'|\"(.+?)\"");
 
     ArrayList<String> registers = new ArrayList<>();
-    String tempRegister = "$v1";
+    final String tempRegister = "$v1";
 
-    String labelPrefix = "simp_label_";
-    int labelCounter = 0;
+    final String labelPrefix = "simp_label_";
     final int indentSize = 4;
+    int labelCounter = 0;
 
     Stack<Block> blocks = new Stack<>();
 
@@ -28,6 +28,8 @@ public class Queen {
 
     public Queen()
     {
+        Init();
+
         // Init Registers
         registers.add("$zero");
         registers.add("$v0");
@@ -87,6 +89,12 @@ public class Queen {
                 new Inst("asm", Pattern.compile("asm:\\s+(.+)"))
         };
         
+    }
+
+    public void Init()
+    {
+        blocks.clear();
+        labelCounter = 0;
     }
 
     public String eval(String input)
@@ -473,6 +481,11 @@ public class Queen {
         }
 
         return "error";
+    }
+
+    public boolean checkEnd()
+    {
+        return blocks.size() == 0;
     }
 
     public String format(String str)

@@ -1,0 +1,23 @@
+For versions x.y.z:
+x = major changes to syntax
+y = minor changes to syntax
+z = bug fixes, changes to Queen only
+
+=====================
+
+1.0.1
+- fixed output directory for Mac OS
+- fixed bug where label count did not reset
+- added check for missing 'end' keyword
+
+1.0.0
+- added instructions: + - * / % << >> >>! & | ^ !
+- added instructions: += -= *= /=
+- added instructions: add sub mul div mod sll srl sra and or xor not
+- added equate and negate
+- added booleans: == != > >= < <=
+- added la, lw, sw, lb, sw
+- added stack.push, stack.pop
+- added if, while, end
+- added func, return, j, jal
+- added exit, comments, inline assembly
