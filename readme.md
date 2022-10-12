@@ -37,7 +37,9 @@ Only the following registers can be used in SIMP:
 - $a0 - $a3
 - $t0 - $t9
 - $s0 - $s8
-- $gp, $sp, $fp, $ra
+- $gp, $sp, $fp
+
+Register $ra is automatically managed by Queen.
 
 ## Math
 Equate (reg **a**, reg/imm **b**)  
