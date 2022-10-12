@@ -143,7 +143,7 @@ public class GUI implements ActionListener {
 
             try {
                 Scanner scan = new Scanner(fileIn);
-                fileOut = new File(outdir + fileIn.getName().substring(0, fileIn.getName().lastIndexOf('.')) + ".asm");
+                fileOut = new File(outdir.substring(0, outdir.length()-1) + "/" + fileIn.getName().substring(0, fileIn.getName().lastIndexOf('.')) + ".asm");
                 fileOut.createNewFile();
 
                 FileWriter writer = new FileWriter(fileOut);
