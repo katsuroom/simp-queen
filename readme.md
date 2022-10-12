@@ -4,6 +4,8 @@ Current version: **1.0**
 
 More detailed documentation is available in `simpapi.pdf`.
 
+![screenshot](screenshot.png)
+
 ## Sample Program
 
 ```
