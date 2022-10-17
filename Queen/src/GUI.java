@@ -102,6 +102,7 @@ public class GUI implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent event) {
+        // Select .simp file
         if(event.getSource() == inputButton)
         {
             JFileChooser browser = new JFileChooser();
@@ -114,6 +115,7 @@ public class GUI implements ActionListener {
                 inputText.setText(fileIn.toString());
             }
         }
+        // Select output directory
         else if(event.getSource() == outputButton)
         {
             JFileChooser browser = new JFileChooser();
@@ -128,6 +130,7 @@ public class GUI implements ActionListener {
                 outputText.setText(outdir);
             }
         }
+        // Translate the .simp file to .asm at the output directory
         else if(event.getSource() == buildButton)
         {
             if(fileIn == null)

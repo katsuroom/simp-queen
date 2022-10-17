@@ -88,7 +88,6 @@ public class Queen {
                 new Inst("exit", Pattern.compile("exit")),
                 new Inst("asm", Pattern.compile("asm:\\s+(.+)"))
         };
-        
     }
 
     public void Init()
@@ -113,7 +112,6 @@ public class Queen {
         }
 
         // Enter text section
-
 
         // MATH
         if(input.contains("="))
@@ -483,11 +481,13 @@ public class Queen {
         return "error";
     }
 
+    // Check called after all lines are translated
     public boolean checkEnd()
     {
         return blocks.size() == 0;
     }
 
+    // Prepend translated line of code with indents and append with comments
     public String format(String str)
     {
         StringBuilder out = new StringBuilder();
@@ -508,6 +508,7 @@ public class Queen {
         return out.toString();
     }
 
+    // Get the next available label
     public String getLabel()
     {
         String str = labelPrefix + labelCounter;
